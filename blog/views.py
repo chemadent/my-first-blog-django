@@ -44,8 +44,8 @@ def post_edit(request, pk):
 
 @login_required
 def post_draft_list(request):
-	post = Post.objects.filter(published_date__isnull=True).order_by('created_date')
-	return render(request, 'blog/post_draft_list.html', {'post': post})
+	posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
+	return render(request, 'blog/post_draft_list.html', {'posts': posts})
 
 @login_required
 def post_publish(request, pk):
@@ -61,9 +61,10 @@ def post_remove(request, pk):
 
 def add_comment_to_post(request, pk):
 	post = get_object_or_404(Post, pk=pk)
-	if request == "POST":
+	if request.method == "POST":
 		form = CommentForm(request.POST)
 		if form.is_valid():
+			#print("This is debug message: form.is_valid()")
 			comment = form.save(commit=False)
 			comment.post = post
 			comment.save()
