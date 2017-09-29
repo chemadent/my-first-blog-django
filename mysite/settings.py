@@ -25,7 +25,7 @@ SECRET_KEY = 'kc##dz73a+ntpj=9%6x&uzm(=fp*d^2x)l-%=w-93%e$(3s22k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'cjz25.pythonanywhere.com', 'cjzizjy20.pythonanywhere.com', ]
+ALLOWED_HOSTS = ['127.0.0.1', 'cjzizjy20.pythonanywhere.com', 'www.cjz25.com',]
 
 
 # Application definition
